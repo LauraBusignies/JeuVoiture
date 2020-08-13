@@ -20,10 +20,11 @@ class Game:
         self.pressed = {}
         self.defeat = False
         self.is_playing = False
-        self.to_strat = True
+        self.to_start = True
         self.counter_score = 0
         # Permet d'agrementer le compteur de score
         self.counter_loop_score = 0
+        self.validation = False
         
 
 
@@ -95,7 +96,7 @@ class Game:
         if self.player.health == 0 :
             self.is_playing = False
             self.defeat = True
-            self.to_strat = False
+            self.to_start = False
 
     def game_replay(self):
         self.player.health = 3
@@ -105,7 +106,7 @@ class Game:
         self.player.image_rect.y = 570
         self.defeat = False
         self.is_playing = False
-        self.to_strat = True
+        self.to_start = True
 
     def score_defeat(self, screen):
         font = pygame.font.Font(None, 45)

@@ -31,3 +31,14 @@ class Player :
 
     def move_down(self):
         self.image_rect.y += self.velocity
+
+    def movement(self) :
+
+        if self.game.pressed.get(pygame.K_RIGHT) and self.game.player.image_rect.x + self.game.player.velocity < 735 :
+            self.game.player.move_right()
+        elif self.game.pressed.get(pygame.K_LEFT) and self.game.player.image_rect.x - self.game.player.velocity > 275:
+            self.game.player.move_left()
+        elif self.game.pressed.get(pygame.K_UP) and self.game.player.image_rect.y - self.game.player.velocity > 0 :
+            self.game.player.move_up()
+        elif self.game.pressed.get(pygame.K_DOWN) and self.game.player.image_rect.y + self.game.player.velocity < 580 :
+            self.game.player.move_down()

@@ -10,7 +10,7 @@ class Enemy :
         self.game = game
         self.image = pygame.image.load('image/carRed.png')
         self.health = 3
-        self.velocity = 4
+        self.velocity = 5
         self.attack = 1
         self.rect = self.image.get_rect()
         self.rect.x = x
