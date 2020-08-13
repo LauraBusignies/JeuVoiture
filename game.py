@@ -24,19 +24,20 @@ class Game:
         self.counter_score = 0
         # Permet d'agrementer le compteur de score
         self.counter_loop_score = 0
-        self.pause = False
+        self.pause = True
 
         
 
 
     def update(self, screen):
         #afficher le joueur et les voitures ennemis
-        if self.is_playing :
-            screen.blit(self.player.image, self.player.image_rect)
-            screen.blit(self.enemy1.image, self.enemy1.rect)
-            screen.blit(self.enemy2.image, self.enemy2.rect)
-            screen.blit(self.enemy3.image, self.enemy3.rect)
+        
+        screen.blit(self.player.image, self.player.image_rect)
+        screen.blit(self.enemy1.image, self.enemy1.rect)
+        screen.blit(self.enemy2.image, self.enemy2.rect)
+        screen.blit(self.enemy3.image, self.enemy3.rect)
 
+        if self.pause :
             # Si un enemy sort de la map ou si il est en contact avec le player
             for enemy in self.list_enemy :  
                 if enemy.rect.y > 720 or self.player.image_rect.colliderect(enemy.rect):

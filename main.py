@@ -49,7 +49,7 @@ while running :
         screen.blit(background_strat, (0,0))
         screen.blit(button_strat, button_strat_rect)
 
-    elif game.is_playing :
+    elif game.is_playing and game.pause == True :
         # screen.blit(background, (0, 0))
         # tout les 5 tour de boucle la position Y de la map change
         counter += 1
@@ -82,11 +82,16 @@ while running :
                 game.to_start = False
                 game.is_playing = True
 
-            #elif event.key == pygame.K_ESCAPE :
+            if event.key == pygame.K_ESCAPE and game.pause == True :
+                game.pause = False
 
+            elif event.key == pygame.K_ESCAPE and game.pause == False:
+                game.pause = True
 
         elif event.type == pygame.KEYUP :
             game.pressed[event.key] = False
+
+
 
         elif event.type == pygame.MOUSEBUTTONDOWN and game.is_playing == False :
 
