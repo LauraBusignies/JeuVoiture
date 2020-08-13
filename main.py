@@ -82,6 +82,9 @@ while running :
                 game.to_start = False
                 game.is_playing = True
 
+            #elif event.key == pygame.K_ESCAPE :
+
+
         elif event.type == pygame.KEYUP :
             game.pressed[event.key] = False
 

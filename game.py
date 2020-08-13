@@ -24,7 +24,8 @@ class Game:
         self.counter_score = 0
         # Permet d'agrementer le compteur de score
         self.counter_loop_score = 0
-        self.validation = False
+        self.pause = False
+
         
 
 
@@ -102,6 +103,7 @@ class Game:
         self.player.health = 3
         self.counter_score = 0
         self.enemy1.change_velocity = 5
+        self.enemy1.rang_velocity = [500, 1000, 1500]
         self.player.image_rect.x = 500
         self.player.image_rect.y = 570
         self.defeat = False
