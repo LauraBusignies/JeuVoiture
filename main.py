@@ -17,11 +17,16 @@ button_strat = pygame.image.load('image/strat.png').convert()
 background_strat = pygame.image.load('image/background_start.png').convert()
 backgroundXXL = pygame.image.load('image/backgroundXXL.png').convert()
 back_health = pygame.image.load('image/back_health.png').convert()
+button_echap = pygame.image.load('image/pause.png').convert()
 
 game = Game(screen)
 running = True
 # pour faire bouger la map pas trop vite
 counter = 0
+
+button_echap_rect = button_echap.get_rect()
+button_echap_rect.x = 325
+button_echap_rect.y = 200
 
 back_health_rect = back_health.get_rect()
 back_health_rect.x = 810
@@ -84,6 +89,7 @@ while running :
 
             if event.key == pygame.K_ESCAPE and game.pause == True :
                 game.pause = False
+                screen.blit(button_echap, button_echap_rect)
 
             elif event.key == pygame.K_ESCAPE and game.pause == False:
                 game.pause = True
